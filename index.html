@@ -1,0 +1,1014 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kedsac - Tim Hortons - FEB2025</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    /* Tema oscuro moderno con toques azules y resaltos */
+    body {
+      background-color: #121212;
+      color: #a6c8ff;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+    .container {
+      max-width: 1200px;
+    }
+    .card {
+      background-color: #1e1e1e;
+      border: none;
+      color: #a6c8ff;
+      margin-bottom: 1rem;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+    .card:hover {
+      transform: scale(1.02);
+    }
+    a {
+      color: #8ab4f8;
+    }
+    /* Pestañas */
+    .nav-tabs .nav-link {
+      background-color: #1e1e1e;
+      color: #a6c8ff;
+      border: none;
+      margin-right: 0.2rem;
+      transition: background-color 0.3s;
+    }
+    .nav-tabs .nav-link.active {
+      background-color: #2a2a2a;
+      color: #a6c8ff;
+    }
+    .modal-content {
+      background-color: #1e1e1e;
+      color: #a6c8ff;
+    }
+    .form-control, .form-select {
+      background-color: #2a2a2a;
+      color: #a6c8ff;
+      border: 1px solid #444;
+    }
+    .btn-primary {
+      background-color: #3a81f1;
+      border: none;
+    }
+    /* Resaltar etiquetas y datos */
+    .fw-bold.text-warning {
+      font-size: 0.95rem;
+    }
+    .text-light {
+      font-size: 1rem;
+    }
+    /* Imagen de referencia */
+    .ref-frame {
+      max-width: 300px;
+      display: block;
+      margin: 0.5rem auto;
+      border: 1px solid #444;
+      border-radius: 5px;
+    }
+    /* Sección de entrega */
+    .final-video-section {
+      border-top: 1px solid #444;
+      margin-top: 1rem;
+      padding-top: 1rem;
+    }
+    /* Animación fadeIn */
+    .fade-in {
+      animation: fadeIn 0.5s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container my-4">
+    <h1>Kedsac - Tim Hortons - FEB2025</h1>
+    
+    <!-- Pestañas principales: 4 Jornadas -->
+    <ul class="nav nav-tabs justify-content-center" id="jornadaTabs" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="jornada1-tab" data-bs-toggle="tab" data-bs-target="#jornada1" type="button" role="tab" aria-controls="jornada1" aria-selected="true">Jornada 1</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="jornada2-tab" data-bs-toggle="tab" data-bs-target="#jornada2" type="button" role="tab" aria-controls="jornada2" aria-selected="false">Jornada 2</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="jornada3-tab" data-bs-toggle="tab" data-bs-target="#jornada3" type="button" role="tab" aria-controls="jornada3" aria-selected="false">Jornada 3</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="jornada4-tab" data-bs-toggle="tab" data-bs-target="#jornada4" type="button" role="tab" aria-controls="jornada4" aria-selected="false">Jornada 4</button>
+      </li>
+    </ul>
+    
+    <div class="tab-content" id="jornadaTabsContent">
+      <!-- Para cada jornada se replican 6 pestañas para videos -->
+      
+      <!-- Jornada 1 -->
+      <div class="tab-pane fade show active" id="jornada1" role="tabpanel" aria-labelledby="jornada1-tab">
+        <ul class="nav nav-tabs justify-content-center mt-3" id="videoTabsJ1" role="tablist">
+          <!-- 6 videos -->
+          <li class="nav-item" role="presentation"><button class="nav-link active" id="video1J1-tab" data-bs-toggle="tab" data-bs-target="#video1J1" type="button" role="tab" aria-controls="video1J1" aria-selected="true">Video 1</button></li>
+          <li class="nav-item" role="presentation"><button class="nav-link" id="video2J1-tab" data-bs-toggle="tab" data-bs-target="#video2J1" type="button" role="tab" aria-controls="video2J1" aria-selected="false">Video 2</button></li>
+          <li class="nav-item" role="presentation"><button class="nav-link" id="video3J1-tab" data-bs-toggle="tab" data-bs-target="#video3J1" type="button" role="tab" aria-controls="video3J1" aria-selected="false">Video 3</button></li>
+          <li class="nav-item" role="presentation"><button class="nav-link" id="video4J1-tab" data-bs-toggle="tab" data-bs-target="#video4J1" type="button" role="tab" aria-controls="video4J1" aria-selected="false">Video 4</button></li>
+          <li class="nav-item" role="presentation"><button class="nav-link" id="video5J1-tab" data-bs-toggle="tab" data-bs-target="#video5J1" type="button" role="tab" aria-controls="video5J1" aria-selected="false">Video 5</button></li>
+          <li class="nav-item" role="presentation"><button class="nav-link" id="video6J1-tab" data-bs-toggle="tab" data-bs-target="#video6J1" type="button" role="tab" aria-controls="video6J1" aria-selected="false">Video 6</button></li>
+        </ul>
+        <div class="tab-content mt-3" id="videoTabsContentJ1">
+          <!-- Para cada video se muestra la tarjeta con dos secciones -->
+          <!-- Ejemplo Video 1 de Jornada 1 -->
+          <div class="tab-pane fade show active fade-in" id="video1J1" role="tabpanel" aria-labelledby="video1J1-tab">
+            <div class="card text-center">
+              <div class="card-body">
+                <h5 class="card-title text-info">Video 1</h5>
+                <!-- Sección de Información de Grabación -->
+                <div class="recording-section">
+                  <p><span class="fw-bold text-warning">Fecha de Grabación:</span> <span id="fechaVideo1-1" class="text-light">--/--/----</span></p>
+                  <p><span class="fw-bold text-warning">Título:</span> <span id="tituloVideo1-1" class="text-light">Título del Video 1</span></p>
+                  <p><span class="fw-bold text-warning">Referencia:</span> <a href="#" id="linkReferenciaVideo1-1" class="text-light" target="_blank">Ver Link</a></p>
+                  <div>
+                    <img id="refFrameVideo1-1" src="" alt="Frame de Referencia" class="ref-frame" style="display:none;">
+                  </div>
+                  <!-- Nuevo: Comentarios de Grabación -->
+                  <p><span class="fw-bold text-warning">Comentarios:</span> <span id="comentariosRecordingVideo1-1" class="text-light">Sin comentarios</span></p>
+                  <!-- Estado de Jornada: se muestra como badge -->
+                  <p><span class="fw-bold text-warning">Estado de Jornada:</span> <span id="estadoVideo1-1" class="badge bg-danger">Por Realizar</span></p>
+                  <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editRecordingModal" data-video="1-1">Editar Grabación</button>
+                </div>
+                <hr>
+                <!-- Sección de Información de Entrega -->
+                <div class="final-video-section">
+                  <p><span class="fw-bold text-warning">Link del Video Final (Google Drive):</span> <a href="#" id="driveVideo1-1" class="btn btn-outline-light" target="_blank">Ver Video</a></p>
+                  <p><span class="fw-bold text-warning">Comentarios/Correcciones:</span> <span id="comentariosVideo1-1" class="text-light">Sin comentarios</span></p>
+                  <p><span class="fw-bold text-warning">Estado Final:</span> <span id="estadoFinalVideo1-1" class="text-light">En Revisión</span></p>
+                  <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editDeliveryModal" data-video="1-1">Editar Entrega</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Se replican las tarjetas Video 2 a Video 6 para Jornada 1 -->
+          <!-- Video 2 -->
+          <div class="tab-pane fade fade-in" id="video2J1" role="tabpanel" aria-labelledby="video2J1-tab">
+            <div class="card text-center">
+              <div class="card-body">
+                <h5 class="card-title text-info">Video 2</h5>
+                <div class="recording-section">
+                  <p><span class="fw-bold text-warning">Fecha de Grabación:</span> <span id="fechaVideo1-2" class="text-light">--/--/----</span></p>
+                  <p><span class="fw-bold text-warning">Título:</span> <span id="tituloVideo1-2" class="text-light">Título del Video 2</span></p>
+                  <p><span class="fw-bold text-warning">Referencia:</span> <a href="#" id="linkReferenciaVideo1-2" class="text-light" target="_blank">Ver Link</a></p>
+                  <div>
+                    <img id="refFrameVideo1-2" src="" alt="Frame de Referencia" class="ref-frame" style="display:none;">
+                  </div>
+                  <p><span class="fw-bold text-warning">Comentarios:</span> <span id="comentariosRecordingVideo1-2" class="text-light">Sin comentarios</span></p>
+                  <p><span class="fw-bold text-warning">Estado de Jornada:</span> <span id="estadoVideo1-2" class="badge bg-danger">Por Realizar</span></p>
+                  <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editRecordingModal" data-video="1-2">Editar Grabación</button>
+                </div>
+                <hr>
+                <div class="final-video-section">
+                  <p><span class="fw-bold text-warning">Link del Video Final (Google Drive):</span> <a href="#" id="driveVideo1-2" class="btn btn-outline-light" target="_blank">Ver Video</a></p>
+                  <p><span class="fw-bold text-warning">Comentarios/Correcciones:</span> <span id="comentariosVideo1-2" class="text-light">Sin comentarios</span></p>
+                  <p><span class="fw-bold text-warning">Estado Final:</span> <span id="estadoFinalVideo1-2" class="text-light">En Revisión</span></p>
+                  <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editDeliveryModal" data-video="1-2">Editar Entrega</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Video 3 -->
+          <div class="tab-pane fade fade-in" id="video3J1" role="tabpanel" aria-labelledby="video3J1-tab">
+            <div class="card text-center">
+              <div class="card-body">
+                <h5 class="card-title text-info">Video 3</h5>
+                <div class="recording-section">
+                  <p><span class="fw-bold text-warning">Fecha de Grabación:</span> <span id="fechaVideo1-3" class="text-light">--/--/----</span></p>
+                  <p><span class="fw-bold text-warning">Título:</span> <span id="tituloVideo1-3" class="text-light">Título del Video 3</span></p>
+                  <p><span class="fw-bold text-warning">Referencia:</span> <a href="#" id="linkReferenciaVideo1-3" class="text-light" target="_blank">Ver Link</a></p>
+                  <div>
+                    <img id="refFrameVideo1-3" src="" alt="Frame de Referencia" class="ref-frame" style="display:none;">
+                  </div>
+                  <p><span class="fw-bold text-warning">Comentarios:</span> <span id="comentariosRecordingVideo1-3" class="text-light">Sin comentarios</span></p>
+                  <p><span class="fw-bold text-warning">Estado de Jornada:</span> <span id="estadoVideo1-3" class="badge bg-danger">Por Realizar</span></p>
+                  <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editRecordingModal" data-video="1-3">Editar Grabación</button>
+                </div>
+                <hr>
+                <div class="final-video-section">
+                  <p><span class="fw-bold text-warning">Link del Video Final (Google Drive):</span> <a href="#" id="driveVideo1-3" class="btn btn-outline-light" target="_blank">Ver Video</a></p>
+                  <p><span class="fw-bold text-warning">Comentarios/Correcciones:</span> <span id="comentariosVideo1-3" class="text-light">Sin comentarios</span></p>
+                  <p><span class="fw-bold text-warning">Estado Final:</span> <span id="estadoFinalVideo1-3" class="text-light">En Revisión</span></p>
+                  <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editDeliveryModal" data-video="1-3">Editar Entrega</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Video 4 -->
+          <div class="tab-pane fade fade-in" id="video4J1" role="tabpanel" aria-labelledby="video4J1-tab">
+            <div class="card text-center">
+              <div class="card-body">
+                <h5 class="card-title text-info">Video 4</h5>
+                <div class="recording-section">
+                  <p><span class="fw-bold text-warning">Fecha de Grabación:</span> <span id="fechaVideo1-4" class="text-light">--/--/----</span></p>
+                  <p><span class="fw-bold text-warning">Título:</span> <span id="tituloVideo1-4" class="text-light">Título del Video 4</span></p>
+                  <p><span class="fw-bold text-warning">Referencia:</span> <a href="#" id="linkReferenciaVideo1-4" class="text-light" target="_blank">Ver Link</a></p>
+                  <div>
+                    <img id="refFrameVideo1-4" src="" alt="Frame de Referencia" class="ref-frame" style="display:none;">
+                  </div>
+                  <p><span class="fw-bold text-warning">Comentarios:</span> <span id="comentariosRecordingVideo1-4" class="text-light">Sin comentarios</span></p>
+                  <p><span class="fw-bold text-warning">Estado de Jornada:</span> <span id="estadoVideo1-4" class="badge bg-danger">Por Realizar</span></p>
+                  <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editRecordingModal" data-video="1-4">Editar Grabación</button>
+                </div>
+                <hr>
+                <div class="final-video-section">
+                  <p><span class="fw-bold text-warning">Link del Video Final (Google Drive):</span> <a href="#" id="driveVideo1-4" class="btn btn-outline-light" target="_blank">Ver Video</a></p>
+                  <p><span class="fw-bold text-warning">Comentarios/Correcciones:</span> <span id="comentariosVideo1-4" class="text-light">Sin comentarios</span></p>
+                  <p><span class="fw-bold text-warning">Estado Final:</span> <span id="estadoFinalVideo1-4" class="text-light">En Revisión</span></p>
+                  <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editDeliveryModal" data-video="1-4">Editar Entrega</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Video 5 -->
+          <div class="tab-pane fade fade-in" id="video5J1" role="tabpanel" aria-labelledby="video5J1-tab">
+            <div class="card text-center">
+              <div class="card-body">
+                <h5 class="card-title text-info">Video 5</h5>
+                <div class="recording-section">
+                  <p><span class="fw-bold text-warning">Fecha de Grabación:</span> <span id="fechaVideo1-5" class="text-light">--/--/----</span></p>
+                  <p><span class="fw-bold text-warning">Título:</span> <span id="tituloVideo1-5" class="text-light">Título del Video 5</span></p>
+                  <p><span class="fw-bold text-warning">Referencia:</span> <a href="#" id="linkReferenciaVideo1-5" class="text-light" target="_blank">Ver Link</a></p>
+                  <div>
+                    <img id="refFrameVideo1-5" src="" alt="Frame de Referencia" class="ref-frame" style="display:none;">
+                  </div>
+                  <p><span class="fw-bold text-warning">Comentarios:</span> <span id="comentariosRecordingVideo1-5" class="text-light">Sin comentarios</span></p>
+                  <p><span class="fw-bold text-warning">Estado de Jornada:</span> <span id="estadoVideo1-5" class="badge bg-danger">Por Realizar</span></p>
+                  <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editRecordingModal" data-video="1-5">Editar Grabación</button>
+                </div>
+                <hr>
+                <div class="final-video-section">
+                  <p><span class="fw-bold text-warning">Link del Video Final (Google Drive):</span> <a href="#" id="driveVideo1-5" class="btn btn-outline-light" target="_blank">Ver Video</a></p>
+                  <p><span class="fw-bold text-warning">Comentarios/Correcciones:</span> <span id="comentariosVideo1-5" class="text-light">Sin comentarios</span></p>
+                  <p><span class="fw-bold text-warning">Estado Final:</span> <span id="estadoFinalVideo1-5" class="text-light">En Revisión</span></p>
+                  <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editDeliveryModal" data-video="1-5">Editar Entrega</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Video 6 -->
+          <div class="tab-pane fade fade-in" id="video6J1" role="tabpanel" aria-labelledby="video6J1-tab">
+            <div class="card text-center">
+              <div class="card-body">
+                <h5 class="card-title text-info">Video 6</h5>
+                <div class="recording-section">
+                  <p><span class="fw-bold text-warning">Fecha de Grabación:</span> <span id="fechaVideo1-6" class="text-light">--/--/----</span></p>
+                  <p><span class="fw-bold text-warning">Título:</span> <span id="tituloVideo1-6" class="text-light">Título del Video 6</span></p>
+                  <p><span class="fw-bold text-warning">Referencia:</span> <a href="#" id="linkReferenciaVideo1-6" class="text-light" target="_blank">Ver Link</a></p>
+                  <div>
+                    <img id="refFrameVideo1-6" src="" alt="Frame de Referencia" class="ref-frame" style="display:none;">
+                  </div>
+                  <p><span class="fw-bold text-warning">Comentarios:</span> <span id="comentariosRecordingVideo1-6" class="text-light">Sin comentarios</span></p>
+                  <p><span class="fw-bold text-warning">Estado de Jornada:</span> <span id="estadoVideo1-6" class="badge bg-danger">Por Realizar</span></p>
+                  <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editRecordingModal" data-video="1-6">Editar Grabación</button>
+                </div>
+                <hr>
+                <div class="final-video-section">
+                  <p><span class="fw-bold text-warning">Link del Video Final (Google Drive):</span> <a href="#" id="driveVideo1-6" class="btn btn-outline-light" target="_blank">Ver Video</a></p>
+                  <p><span class="fw-bold text-warning">Comentarios/Correcciones:</span> <span id="comentariosVideo1-6" class="text-light">Sin comentarios</span></p>
+                  <p><span class="fw-bold text-warning">Estado Final:</span> <span id="estadoFinalVideo1-6" class="text-light">En Revisión</span></p>
+                  <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editDeliveryModal" data-video="1-6">Editar Entrega</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Jornada 2 -->
+      <div class="tab-pane fade" id="jornada2" role="tabpanel" aria-labelledby="jornada2-tab">
+        <ul class="nav nav-tabs justify-content-center mt-3" id="videoTabsJ2" role="tablist">
+          <li class="nav-item" role="presentation"><button class="nav-link active" id="video1J2-tab" data-bs-toggle="tab" data-bs-target="#video1J2" type="button" role="tab" aria-controls="video1J2" aria-selected="true">Video 1</button></li>
+          <li class="nav-item" role="presentation"><button class="nav-link" id="video2J2-tab" data-bs-toggle="tab" data-bs-target="#video2J2" type="button" role="tab" aria-controls="video2J2" aria-selected="false">Video 2</button></li>
+          <li class="nav-item" role="presentation"><button class="nav-link" id="video3J2-tab" data-bs-toggle="tab" data-bs-target="#video3J2" type="button" role="tab" aria-controls="video3J2" aria-selected="false">Video 3</button></li>
+          <li class="nav-item" role="presentation"><button class="nav-link" id="video4J2-tab" data-bs-toggle="tab" data-bs-target="#video4J2" type="button" role="tab" aria-controls="video4J2" aria-selected="false">Video 4</button></li>
+          <li class="nav-item" role="presentation"><button class="nav-link" id="video5J2-tab" data-bs-toggle="tab" data-bs-target="#video5J2" type="button" role="tab" aria-controls="video5J2" aria-selected="false">Video 5</button></li>
+          <li class="nav-item" role="presentation"><button class="nav-link" id="video6J2-tab" data-bs-toggle="tab" data-bs-target="#video6J2" type="button" role="tab" aria-controls="video6J2" aria-selected="false">Video 6</button></li>
+        </ul>
+        <div class="tab-content mt-3" id="videoTabsContentJ2">
+          <!-- Se replican las 6 tarjetas para Jornada 2 (aquí se muestra Video 1) -->
+          <div class="tab-pane fade show active fade-in" id="video1J2" role="tabpanel" aria-labelledby="video1J2-tab">
+            <div class="card text-center">
+              <div class="card-body">
+                <h5 class="card-title text-info">Video 1</h5>
+                <div class="recording-section">
+                  <p><span class="fw-bold text-warning">Fecha de Grabación:</span> <span id="fechaVideo2-1" class="text-light">--/--/----</span></p>
+                  <p><span class="fw-bold text-warning">Título:</span> <span id="tituloVideo2-1" class="text-light">Título del Video 1</span></p>
+                  <p><span class="fw-bold text-warning">Referencia:</span> <a href="#" id="linkReferenciaVideo2-1" class="text-light" target="_blank">Ver Link</a></p>
+                  <div>
+                    <img id="refFrameVideo2-1" src="" alt="Frame de Referencia" class="ref-frame" style="display:none;">
+                  </div>
+                  <p><span class="fw-bold text-warning">Comentarios:</span> <span id="comentariosRecordingVideo2-1" class="text-light">Sin comentarios</span></p>
+                  <p><span class="fw-bold text-warning">Estado de Jornada:</span> <span id="estadoVideo2-1" class="badge bg-danger">Por Realizar</span></p>
+                  <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editRecordingModal" data-video="2-1">Editar Grabación</button>
+                </div>
+                <hr>
+                <div class="final-video-section">
+                  <p><span class="fw-bold text-warning">Link del Video Final (Google Drive):</span> <a href="#" id="driveVideo2-1" class="btn btn-outline-light" target="_blank">Ver Video</a></p>
+                  <p><span class="fw-bold text-warning">Comentarios/Correcciones:</span> <span id="comentariosVideo2-1" class="text-light">Sin comentarios</span></p>
+                  <p><span class="fw-bold text-warning">Estado Final:</span> <span id="estadoFinalVideo2-1" class="text-light">En Revisión</span></p>
+                  <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editDeliveryModal" data-video="2-1">Editar Entrega</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Se replican Videos 2 a 6 para Jornada 2 -->
+                     <!-- Video 2 -->
+          <div class="tab-pane fade fade-in" id="video2J2" role="tabpanel" aria-labelledby="video2J2-tab">
+            <div class="card text-center">
+              <div class="card-body">
+                <h5 class="card-title text-info">Video 2</h5>
+                <div class="recording-section">
+                  <p><span class="fw-bold text-warning">Fecha de Grabación:</span> <span id="fechaVideo2-2" class="text-light">--/--/----</span></p>
+                  <p><span class="fw-bold text-warning">Título:</span> <span id="tituloVideo2-2" class="text-light">Título del Video 2</span></p>
+                  <p><span class="fw-bold text-warning">Referencia:</span> <a href="#" id="linkReferenciaVideo1-2" class="text-light" target="_blank">Ver Link</a></p>
+                  <div>
+                    <img id="refFrameVideo1-2" src="" alt="Frame de Referencia" class="ref-frame" style="display:none;">
+                  </div>
+                  <p><span class="fw-bold text-warning">Comentarios:</span> <span id="comentariosRecordingVideo1-2" class="text-light">Sin comentarios</span></p>
+                  <p><span class="fw-bold text-warning">Estado de Jornada:</span> <span id="estadoVideo1-2" class="badge bg-danger">Por Realizar</span></p>
+                  <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editRecordingModal" data-video="1-2">Editar Grabación</button>
+                </div>
+                <hr>
+                <div class="final-video-section">
+                  <p><span class="fw-bold text-warning">Link del Video Final (Google Drive):</span> <a href="#" id="driveVideo1-2" class="btn btn-outline-light" target="_blank">Ver Video</a></p>
+                  <p><span class="fw-bold text-warning">Comentarios/Correcciones:</span> <span id="comentariosVideo1-2" class="text-light">Sin comentarios</span></p>
+                  <p><span class="fw-bold text-warning">Estado Final:</span> <span id="estadoFinalVideo1-2" class="text-light">En Revisión</span></p>
+                  <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editDeliveryModal" data-video="1-2">Editar Entrega</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Video 3 -->
+          <div class="tab-pane fade fade-in" id="video3J2" role="tabpanel" aria-labelledby="video3J2-tab">
+            <div class="card text-center">
+              <div class="card-body">
+                <h5 class="card-title text-info">Video 3</h5>
+                <div class="recording-section">
+                  <p><span class="fw-bold text-warning">Fecha de Grabación:</span> <span id="fechaVideo2-3" class="text-light">--/--/----</span></p>
+                  <p><span class="fw-bold text-warning">Título:</span> <span id="tituloVideo1-3" class="text-light">Título del Video 3</span></p>
+                  <p><span class="fw-bold text-warning">Referencia:</span> <a href="#" id="linkReferenciaVideo1-3" class="text-light" target="_blank">Ver Link</a></p>
+                  <div>
+                    <img id="refFrameVideo1-3" src="" alt="Frame de Referencia" class="ref-frame" style="display:none;">
+                  </div>
+                  <p><span class="fw-bold text-warning">Comentarios:</span> <span id="comentariosRecordingVideo1-3" class="text-light">Sin comentarios</span></p>
+                  <p><span class="fw-bold text-warning">Estado de Jornada:</span> <span id="estadoVideo1-3" class="badge bg-danger">Por Realizar</span></p>
+                  <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editRecordingModal" data-video="1-3">Editar Grabación</button>
+                </div>
+                <hr>
+                <div class="final-video-section">
+                  <p><span class="fw-bold text-warning">Link del Video Final (Google Drive):</span> <a href="#" id="driveVideo1-3" class="btn btn-outline-light" target="_blank">Ver Video</a></p>
+                  <p><span class="fw-bold text-warning">Comentarios/Correcciones:</span> <span id="comentariosVideo1-3" class="text-light">Sin comentarios</span></p>
+                  <p><span class="fw-bold text-warning">Estado Final:</span> <span id="estadoFinalVideo1-3" class="text-light">En Revisión</span></p>
+                  <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editDeliveryModal" data-video="1-3">Editar Entrega</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Video 4 -->
+          <div class="tab-pane fade fade-in" id="video4J2" role="tabpanel" aria-labelledby="video4J2-tab">
+            <div class="card text-center">
+              <div class="card-body">
+                <h5 class="card-title text-info">Video 4</h5>
+                <div class="recording-section">
+                  <p><span class="fw-bold text-warning">Fecha de Grabación:</span> <span id="fechaVideo1-4" class="text-light">--/--/----</span></p>
+                  <p><span class="fw-bold text-warning">Título:</span> <span id="tituloVideo1-4" class="text-light">Título del Video 4</span></p>
+                  <p><span class="fw-bold text-warning">Referencia:</span> <a href="#" id="linkReferenciaVideo1-4" class="text-light" target="_blank">Ver Link</a></p>
+                  <div>
+                    <img id="refFrameVideo1-4" src="" alt="Frame de Referencia" class="ref-frame" style="display:none;">
+                  </div>
+                  <p><span class="fw-bold text-warning">Comentarios:</span> <span id="comentariosRecordingVideo1-4" class="text-light">Sin comentarios</span></p>
+                  <p><span class="fw-bold text-warning">Estado de Jornada:</span> <span id="estadoVideo1-4" class="badge bg-danger">Por Realizar</span></p>
+                  <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editRecordingModal" data-video="1-4">Editar Grabación</button>
+                </div>
+                <hr>
+                <div class="final-video-section">
+                  <p><span class="fw-bold text-warning">Link del Video Final (Google Drive):</span> <a href="#" id="driveVideo1-4" class="btn btn-outline-light" target="_blank">Ver Video</a></p>
+                  <p><span class="fw-bold text-warning">Comentarios/Correcciones:</span> <span id="comentariosVideo1-4" class="text-light">Sin comentarios</span></p>
+                  <p><span class="fw-bold text-warning">Estado Final:</span> <span id="estadoFinalVideo1-4" class="text-light">En Revisión</span></p>
+                  <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editDeliveryModal" data-video="1-4">Editar Entrega</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Video 5 -->
+          <div class="tab-pane fade fade-in" id="video5J2" role="tabpanel" aria-labelledby="video5J2-tab">
+            <div class="card text-center">
+              <div class="card-body">
+                <h5 class="card-title text-info">Video 5</h5>
+                <div class="recording-section">
+                  <p><span class="fw-bold text-warning">Fecha de Grabación:</span> <span id="fechaVideo1-5" class="text-light">--/--/----</span></p>
+                  <p><span class="fw-bold text-warning">Título:</span> <span id="tituloVideo1-5" class="text-light">Título del Video 5</span></p>
+                  <p><span class="fw-bold text-warning">Referencia:</span> <a href="#" id="linkReferenciaVideo1-5" class="text-light" target="_blank">Ver Link</a></p>
+                  <div>
+                    <img id="refFrameVideo1-5" src="" alt="Frame de Referencia" class="ref-frame" style="display:none;">
+                  </div>
+                  <p><span class="fw-bold text-warning">Comentarios:</span> <span id="comentariosRecordingVideo1-5" class="text-light">Sin comentarios</span></p>
+                  <p><span class="fw-bold text-warning">Estado de Jornada:</span> <span id="estadoVideo1-5" class="badge bg-danger">Por Realizar</span></p>
+                  <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editRecordingModal" data-video="1-5">Editar Grabación</button>
+                </div>
+                <hr>
+                <div class="final-video-section">
+                  <p><span class="fw-bold text-warning">Link del Video Final (Google Drive):</span> <a href="#" id="driveVideo1-5" class="btn btn-outline-light" target="_blank">Ver Video</a></p>
+                  <p><span class="fw-bold text-warning">Comentarios/Correcciones:</span> <span id="comentariosVideo1-5" class="text-light">Sin comentarios</span></p>
+                  <p><span class="fw-bold text-warning">Estado Final:</span> <span id="estadoFinalVideo1-5" class="text-light">En Revisión</span></p>
+                  <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editDeliveryModal" data-video="1-5">Editar Entrega</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Video 6 -->
+          <div class="tab-pane fade fade-in" id="video6J2" role="tabpanel" aria-labelledby="video6J2-tab">
+            <div class="card text-center">
+              <div class="card-body">
+                <h5 class="card-title text-info">Video 6</h5>
+                <div class="recording-section">
+                  <p><span class="fw-bold text-warning">Fecha de Grabación:</span> <span id="fechaVideo1-6" class="text-light">--/--/----</span></p>
+                  <p><span class="fw-bold text-warning">Título:</span> <span id="tituloVideo1-6" class="text-light">Título del Video 6</span></p>
+                  <p><span class="fw-bold text-warning">Referencia:</span> <a href="#" id="linkReferenciaVideo1-6" class="text-light" target="_blank">Ver Link</a></p>
+                  <div>
+                    <img id="refFrameVideo1-6" src="" alt="Frame de Referencia" class="ref-frame" style="display:none;">
+                  </div>
+                  <p><span class="fw-bold text-warning">Comentarios:</span> <span id="comentariosRecordingVideo1-6" class="text-light">Sin comentarios</span></p>
+                  <p><span class="fw-bold text-warning">Estado de Jornada:</span> <span id="estadoVideo1-6" class="badge bg-danger">Por Realizar</span></p>
+                  <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editRecordingModal" data-video="1-6">Editar Grabación</button>
+                </div>
+                <hr>
+                <div class="final-video-section">
+                  <p><span class="fw-bold text-warning">Link del Video Final (Google Drive):</span> <a href="#" id="driveVideo1-6" class="btn btn-outline-light" target="_blank">Ver Video</a></p>
+                  <p><span class="fw-bold text-warning">Comentarios/Correcciones:</span> <span id="comentariosVideo1-6" class="text-light">Sin comentarios</span></p>
+                  <p><span class="fw-bold text-warning">Estado Final:</span> <span id="estadoFinalVideo1-6" class="text-light">En Revisión</span></p>
+                  <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editDeliveryModal" data-video="1-6">Editar Entrega</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- (Para brevedad se pueden copiar bloques similares cambiando los IDs: "2-2", "2-3", "2-4", "2-5", "2-6") -->
+        </div>
+      </div>
+      
+      <!-- Jornada 3 -->
+      <div class="tab-pane fade" id="jornada3" role="tabpanel" aria-labelledby="jornada3-tab">
+        <ul class="nav nav-tabs justify-content-center mt-3" id="videoTabsJ3" role="tablist">
+          <li class="nav-item" role="presentation"><button class="nav-link active" id="video1J3-tab" data-bs-toggle="tab" data-bs-target="#video1J3" type="button" role="tab" aria-controls="video1J3" aria-selected="true">Video 1</button></li>
+          <li class="nav-item" role="presentation"><button class="nav-link" id="video2J3-tab" data-bs-toggle="tab" data-bs-target="#video2J3" type="button" role="tab" aria-controls="video2J3" aria-selected="false">Video 2</button></li>
+          <li class="nav-item" role="presentation"><button class="nav-link" id="video3J3-tab" data-bs-toggle="tab" data-bs-target="#video3J3" type="button" role="tab" aria-controls="video3J3" aria-selected="false">Video 3</button></li>
+          <li class="nav-item" role="presentation"><button class="nav-link" id="video4J3-tab" data-bs-toggle="tab" data-bs-target="#video4J3" type="button" role="tab" aria-controls="video4J3" aria-selected="false">Video 4</button></li>
+          <li class="nav-item" role="presentation"><button class="nav-link" id="video5J3-tab" data-bs-toggle="tab" data-bs-target="#video5J3" type="button" role="tab" aria-controls="video5J3" aria-selected="false">Video 5</button></li>
+          <li class="nav-item" role="presentation"><button class="nav-link" id="video6J3-tab" data-bs-toggle="tab" data-bs-target="#video6J3" type="button" role="tab" aria-controls="video6J3" aria-selected="false">Video 6</button></li>
+        </ul>
+        <div class="tab-content mt-3" id="videoTabsContentJ3">
+          <!-- Ejemplo: Video 1 de Jornada 3 -->
+          <div class="tab-pane fade show active fade-in" id="video1J3" role="tabpanel" aria-labelledby="video1J3-tab">
+            <div class="card text-center">
+              <div class="card-body">
+                <h5 class="card-title text-info">Video 1</h5>
+                <div class="recording-section">
+                  <p><span class="fw-bold text-warning">Fecha de Grabación:</span> <span id="fechaVideo3-1" class="text-light">--/--/----</span></p>
+                  <p><span class="fw-bold text-warning">Título:</span> <span id="tituloVideo3-1" class="text-light">Título del Video 1</span></p>
+                  <p><span class="fw-bold text-warning">Referencia:</span> <a href="#" id="linkReferenciaVideo3-1" class="text-light" target="_blank">Ver Link</a></p>
+                  <div>
+                    <img id="refFrameVideo3-1" src="" alt="Frame de Referencia" class="ref-frame" style="display:none;">
+                  </div>
+                  <p><span class="fw-bold text-warning">Comentarios:</span> <span id="comentariosRecordingVideo3-1" class="text-light">Sin comentarios</span></p>
+                  <p><span class="fw-bold text-warning">Estado de Jornada:</span> <span id="estadoVideo3-1" class="badge bg-danger">Por Realizar</span></p>
+                  <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editRecordingModal" data-video="3-1">Editar Grabación</button>
+                </div>
+                <hr>
+                <div class="final-video-section">
+                  <p><span class="fw-bold text-warning">Link del Video Final (Google Drive):</span> <a href="#" id="driveVideo3-1" class="btn btn-outline-light" target="_blank">Ver Video</a></p>
+                  <p><span class="fw-bold text-warning">Comentarios/Correcciones:</span> <span id="comentariosVideo3-1" class="text-light">Sin comentarios</span></p>
+                  <p><span class="fw-bold text-warning">Estado Final:</span> <span id="estadoFinalVideo3-1" class="text-light">En Revisión</span></p>
+                  <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editDeliveryModal" data-video="3-1">Editar Entrega</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Replicar Videos 2 a 6 para Jornada 3 -->
+          <div class="tab-pane fade fade-in" id="video2J3" role="tabpanel" aria-labelledby="video2J3-tab">
+            <div class="card text-center">
+              <div class="card-body">
+                <h5 class="card-title text-info">Video 2</h5>
+                <div class="recording-section">
+                  <p><span class="fw-bold text-warning">Fecha de Grabación:</span> <span id="fechaVideo2-2" class="text-light">--/--/----</span></p>
+                  <p><span class="fw-bold text-warning">Título:</span> <span id="tituloVideo2-2" class="text-light">Título del Video 2</span></p>
+                  <p><span class="fw-bold text-warning">Referencia:</span> <a href="#" id="linkReferenciaVideo1-2" class="text-light" target="_blank">Ver Link</a></p>
+                  <div>
+                    <img id="refFrameVideo1-2" src="" alt="Frame de Referencia" class="ref-frame" style="display:none;">
+                  </div>
+                  <p><span class="fw-bold text-warning">Comentarios:</span> <span id="comentariosRecordingVideo1-2" class="text-light">Sin comentarios</span></p>
+                  <p><span class="fw-bold text-warning">Estado de Jornada:</span> <span id="estadoVideo1-2" class="badge bg-danger">Por Realizar</span></p>
+                  <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editRecordingModal" data-video="1-2">Editar Grabación</button>
+                </div>
+                <hr>
+                <div class="final-video-section">
+                  <p><span class="fw-bold text-warning">Link del Video Final (Google Drive):</span> <a href="#" id="driveVideo1-2" class="btn btn-outline-light" target="_blank">Ver Video</a></p>
+                  <p><span class="fw-bold text-warning">Comentarios/Correcciones:</span> <span id="comentariosVideo1-2" class="text-light">Sin comentarios</span></p>
+                  <p><span class="fw-bold text-warning">Estado Final:</span> <span id="estadoFinalVideo1-2" class="text-light">En Revisión</span></p>
+                  <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editDeliveryModal" data-video="1-2">Editar Entrega</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Video 3 -->
+          <div class="tab-pane fade fade-in" id="video3J3" role="tabpanel" aria-labelledby="video3J3-tab">
+            <div class="card text-center">
+              <div class="card-body">
+                <h5 class="card-title text-info">Video 3</h5>
+                <div class="recording-section">
+                  <p><span class="fw-bold text-warning">Fecha de Grabación:</span> <span id="fechaVideo2-3" class="text-light">--/--/----</span></p>
+                  <p><span class="fw-bold text-warning">Título:</span> <span id="tituloVideo1-3" class="text-light">Título del Video 3</span></p>
+                  <p><span class="fw-bold text-warning">Referencia:</span> <a href="#" id="linkReferenciaVideo1-3" class="text-light" target="_blank">Ver Link</a></p>
+                  <div>
+                    <img id="refFrameVideo1-3" src="" alt="Frame de Referencia" class="ref-frame" style="display:none;">
+                  </div>
+                  <p><span class="fw-bold text-warning">Comentarios:</span> <span id="comentariosRecordingVideo1-3" class="text-light">Sin comentarios</span></p>
+                  <p><span class="fw-bold text-warning">Estado de Jornada:</span> <span id="estadoVideo1-3" class="badge bg-danger">Por Realizar</span></p>
+                  <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editRecordingModal" data-video="1-3">Editar Grabación</button>
+                </div>
+                <hr>
+                <div class="final-video-section">
+                  <p><span class="fw-bold text-warning">Link del Video Final (Google Drive):</span> <a href="#" id="driveVideo1-3" class="btn btn-outline-light" target="_blank">Ver Video</a></p>
+                  <p><span class="fw-bold text-warning">Comentarios/Correcciones:</span> <span id="comentariosVideo1-3" class="text-light">Sin comentarios</span></p>
+                  <p><span class="fw-bold text-warning">Estado Final:</span> <span id="estadoFinalVideo1-3" class="text-light">En Revisión</span></p>
+                  <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editDeliveryModal" data-video="1-3">Editar Entrega</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Video 4 -->
+          <div class="tab-pane fade fade-in" id="video4J3" role="tabpanel" aria-labelledby="video4J3-tab">
+            <div class="card text-center">
+              <div class="card-body">
+                <h5 class="card-title text-info">Video 4</h5>
+                <div class="recording-section">
+                  <p><span class="fw-bold text-warning">Fecha de Grabación:</span> <span id="fechaVideo1-4" class="text-light">--/--/----</span></p>
+                  <p><span class="fw-bold text-warning">Título:</span> <span id="tituloVideo1-4" class="text-light">Título del Video 4</span></p>
+                  <p><span class="fw-bold text-warning">Referencia:</span> <a href="#" id="linkReferenciaVideo1-4" class="text-light" target="_blank">Ver Link</a></p>
+                  <div>
+                    <img id="refFrameVideo1-4" src="" alt="Frame de Referencia" class="ref-frame" style="display:none;">
+                  </div>
+                  <p><span class="fw-bold text-warning">Comentarios:</span> <span id="comentariosRecordingVideo1-4" class="text-light">Sin comentarios</span></p>
+                  <p><span class="fw-bold text-warning">Estado de Jornada:</span> <span id="estadoVideo1-4" class="badge bg-danger">Por Realizar</span></p>
+                  <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editRecordingModal" data-video="1-4">Editar Grabación</button>
+                </div>
+                <hr>
+                <div class="final-video-section">
+                  <p><span class="fw-bold text-warning">Link del Video Final (Google Drive):</span> <a href="#" id="driveVideo1-4" class="btn btn-outline-light" target="_blank">Ver Video</a></p>
+                  <p><span class="fw-bold text-warning">Comentarios/Correcciones:</span> <span id="comentariosVideo1-4" class="text-light">Sin comentarios</span></p>
+                  <p><span class="fw-bold text-warning">Estado Final:</span> <span id="estadoFinalVideo1-4" class="text-light">En Revisión</span></p>
+                  <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editDeliveryModal" data-video="1-4">Editar Entrega</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Video 5 -->
+          <div class="tab-pane fade fade-in" id="video5J3" role="tabpanel" aria-labelledby="video5J3-tab">
+            <div class="card text-center">
+              <div class="card-body">
+                <h5 class="card-title text-info">Video 5</h5>
+                <div class="recording-section">
+                  <p><span class="fw-bold text-warning">Fecha de Grabación:</span> <span id="fechaVideo1-5" class="text-light">--/--/----</span></p>
+                  <p><span class="fw-bold text-warning">Título:</span> <span id="tituloVideo1-5" class="text-light">Título del Video 5</span></p>
+                  <p><span class="fw-bold text-warning">Referencia:</span> <a href="#" id="linkReferenciaVideo1-5" class="text-light" target="_blank">Ver Link</a></p>
+                  <div>
+                    <img id="refFrameVideo1-5" src="" alt="Frame de Referencia" class="ref-frame" style="display:none;">
+                  </div>
+                  <p><span class="fw-bold text-warning">Comentarios:</span> <span id="comentariosRecordingVideo1-5" class="text-light">Sin comentarios</span></p>
+                  <p><span class="fw-bold text-warning">Estado de Jornada:</span> <span id="estadoVideo1-5" class="badge bg-danger">Por Realizar</span></p>
+                  <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editRecordingModal" data-video="1-5">Editar Grabación</button>
+                </div>
+                <hr>
+                <div class="final-video-section">
+                  <p><span class="fw-bold text-warning">Link del Video Final (Google Drive):</span> <a href="#" id="driveVideo1-5" class="btn btn-outline-light" target="_blank">Ver Video</a></p>
+                  <p><span class="fw-bold text-warning">Comentarios/Correcciones:</span> <span id="comentariosVideo1-5" class="text-light">Sin comentarios</span></p>
+                  <p><span class="fw-bold text-warning">Estado Final:</span> <span id="estadoFinalVideo1-5" class="text-light">En Revisión</span></p>
+                  <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editDeliveryModal" data-video="1-5">Editar Entrega</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Video 6 -->
+          <div class="tab-pane fade fade-in" id="video6J3" role="tabpanel" aria-labelledby="video6J3-tab">
+            <div class="card text-center">
+              <div class="card-body">
+                <h5 class="card-title text-info">Video 6</h5>
+                <div class="recording-section">
+                  <p><span class="fw-bold text-warning">Fecha de Grabación:</span> <span id="fechaVideo1-6" class="text-light">--/--/----</span></p>
+                  <p><span class="fw-bold text-warning">Título:</span> <span id="tituloVideo1-6" class="text-light">Título del Video 6</span></p>
+                  <p><span class="fw-bold text-warning">Referencia:</span> <a href="#" id="linkReferenciaVideo1-6" class="text-light" target="_blank">Ver Link</a></p>
+                  <div>
+                    <img id="refFrameVideo1-6" src="" alt="Frame de Referencia" class="ref-frame" style="display:none;">
+                  </div>
+                  <p><span class="fw-bold text-warning">Comentarios:</span> <span id="comentariosRecordingVideo1-6" class="text-light">Sin comentarios</span></p>
+                  <p><span class="fw-bold text-warning">Estado de Jornada:</span> <span id="estadoVideo1-6" class="badge bg-danger">Por Realizar</span></p>
+                  <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editRecordingModal" data-video="1-6">Editar Grabación</button>
+                </div>
+                <hr>
+                <div class="final-video-section">
+                  <p><span class="fw-bold text-warning">Link del Video Final (Google Drive):</span> <a href="#" id="driveVideo1-6" class="btn btn-outline-light" target="_blank">Ver Video</a></p>
+                  <p><span class="fw-bold text-warning">Comentarios/Correcciones:</span> <span id="comentariosVideo1-6" class="text-light">Sin comentarios</span></p>
+                  <p><span class="fw-bold text-warning">Estado Final:</span> <span id="estadoFinalVideo1-6" class="text-light">En Revisión</span></p>
+                  <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editDeliveryModal" data-video="1-6">Editar Entrega</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Jornada 4 -->
+      <div class="tab-pane fade" id="jornada4" role="tabpanel" aria-labelledby="jornada4-tab">
+        <ul class="nav nav-tabs justify-content-center mt-3" id="videoTabsJ4" role="tablist">
+          <li class="nav-item" role="presentation"><button class="nav-link active" id="video1J4-tab" data-bs-toggle="tab" data-bs-target="#video1J4" type="button" role="tab" aria-controls="video1J4" aria-selected="true">Video 1</button></li>
+          <li class="nav-item" role="presentation"><button class="nav-link" id="video2J4-tab" data-bs-toggle="tab" data-bs-target="#video2J4" type="button" role="tab" aria-controls="video2J4" aria-selected="false">Video 2</button></li>
+          <li class="nav-item" role="presentation"><button class="nav-link" id="video3J4-tab" data-bs-toggle="tab" data-bs-target="#video3J4" type="button" role="tab" aria-controls="video3J4" aria-selected="false">Video 3</button></li>
+          <li class="nav-item" role="presentation"><button class="nav-link" id="video4J4-tab" data-bs-toggle="tab" data-bs-target="#video4J4" type="button" role="tab" aria-controls="video4J4" aria-selected="false">Video 4</button></li>
+          <li class="nav-item" role="presentation"><button class="nav-link" id="video5J4-tab" data-bs-toggle="tab" data-bs-target="#video5J4" type="button" role="tab" aria-controls="video5J4" aria-selected="false">Video 5</button></li>
+          <li class="nav-item" role="presentation"><button class="nav-link" id="video6J4-tab" data-bs-toggle="tab" data-bs-target="#video6J4" type="button" role="tab" aria-controls="video6J4" aria-selected="false">Video 6</button></li>
+        </ul>
+        <div class="tab-content mt-3" id="videoTabsContentJ4">
+          <!-- Ejemplo: Video 1 de Jornada 4 -->
+          <div class="tab-pane fade show active fade-in" id="video1J4" role="tabpanel" aria-labelledby="video1J4-tab">
+            <div class="card text-center">
+              <div class="card-body">
+                <h5 class="card-title text-info">Video 1</h5>
+                <div class="recording-section">
+                  <p><span class="fw-bold text-warning">Fecha de Grabación:</span> <span id="fechaVideo4-1" class="text-light">--/--/----</span></p>
+                  <p><span class="fw-bold text-warning">Título:</span> <span id="tituloVideo4-1" class="text-light">Título del Video 1</span></p>
+                  <p><span class="fw-bold text-warning">Referencia:</span> <a href="#" id="linkReferenciaVideo4-1" class="text-light" target="_blank">Ver Link</a></p>
+                  <div>
+                    <img id="refFrameVideo4-1" src="" alt="Frame de Referencia" class="ref-frame" style="display:none;">
+                  </div>
+                  <p><span class="fw-bold text-warning">Comentarios:</span> <span id="comentariosRecordingVideo4-1" class="text-light">Sin comentarios</span></p>
+                  <p><span class="fw-bold text-warning">Estado de Jornada:</span> <span id="estadoVideo4-1" class="badge bg-danger">Por Realizar</span></p>
+                  <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editRecordingModal" data-video="4-1">Editar Grabación</button>
+                </div>
+                <hr>
+                <div class="final-video-section">
+                  <p><span class="fw-bold text-warning">Link del Video Final (Google Drive):</span> <a href="#" id="driveVideo4-1" class="btn btn-outline-light" target="_blank">Ver Video</a></p>
+                  <p><span class="fw-bold text-warning">Comentarios/Correcciones:</span> <span id="comentariosVideo4-1" class="text-light">Sin comentarios</span></p>
+                  <p><span class="fw-bold text-warning">Estado Final:</span> <span id="estadoFinalVideo4-1" class="text-light">En Revisión</span></p>
+                  <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editDeliveryModal" data-video="4-1">Editar Entrega</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Replicar Videos 2 a 6 para Jornada 4 -->
+          <div class="tab-pane fade fade-in" id="video2J4" role="tabpanel" aria-labelledby="video2J4-tab">
+            <div class="card text-center">
+              <div class="card-body">
+                <h5 class="card-title text-info">Video 2</h5>
+                <div class="recording-section">
+                  <p><span class="fw-bold text-warning">Fecha de Grabación:</span> <span id="fechaVideo2-2" class="text-light">--/--/----</span></p>
+                  <p><span class="fw-bold text-warning">Título:</span> <span id="tituloVideo2-2" class="text-light">Título del Video 2</span></p>
+                  <p><span class="fw-bold text-warning">Referencia:</span> <a href="#" id="linkReferenciaVideo1-2" class="text-light" target="_blank">Ver Link</a></p>
+                  <div>
+                    <img id="refFrameVideo1-2" src="" alt="Frame de Referencia" class="ref-frame" style="display:none;">
+                  </div>
+                  <p><span class="fw-bold text-warning">Comentarios:</span> <span id="comentariosRecordingVideo1-2" class="text-light">Sin comentarios</span></p>
+                  <p><span class="fw-bold text-warning">Estado de Jornada:</span> <span id="estadoVideo1-2" class="badge bg-danger">Por Realizar</span></p>
+                  <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editRecordingModal" data-video="1-2">Editar Grabación</button>
+                </div>
+                <hr>
+                <div class="final-video-section">
+                  <p><span class="fw-bold text-warning">Link del Video Final (Google Drive):</span> <a href="#" id="driveVideo1-2" class="btn btn-outline-light" target="_blank">Ver Video</a></p>
+                  <p><span class="fw-bold text-warning">Comentarios/Correcciones:</span> <span id="comentariosVideo1-2" class="text-light">Sin comentarios</span></p>
+                  <p><span class="fw-bold text-warning">Estado Final:</span> <span id="estadoFinalVideo1-2" class="text-light">En Revisión</span></p>
+                  <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editDeliveryModal" data-video="1-2">Editar Entrega</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Video 3 -->
+          <div class="tab-pane fade fade-in" id="video3J4" role="tabpanel" aria-labelledby="video3J4-tab">
+            <div class="card text-center">
+              <div class="card-body">
+                <h5 class="card-title text-info">Video 3</h5>
+                <div class="recording-section">
+                  <p><span class="fw-bold text-warning">Fecha de Grabación:</span> <span id="fechaVideo2-3" class="text-light">--/--/----</span></p>
+                  <p><span class="fw-bold text-warning">Título:</span> <span id="tituloVideo1-3" class="text-light">Título del Video 3</span></p>
+                  <p><span class="fw-bold text-warning">Referencia:</span> <a href="#" id="linkReferenciaVideo1-3" class="text-light" target="_blank">Ver Link</a></p>
+                  <div>
+                    <img id="refFrameVideo1-3" src="" alt="Frame de Referencia" class="ref-frame" style="display:none;">
+                  </div>
+                  <p><span class="fw-bold text-warning">Comentarios:</span> <span id="comentariosRecordingVideo1-3" class="text-light">Sin comentarios</span></p>
+                  <p><span class="fw-bold text-warning">Estado de Jornada:</span> <span id="estadoVideo1-3" class="badge bg-danger">Por Realizar</span></p>
+                  <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editRecordingModal" data-video="1-3">Editar Grabación</button>
+                </div>
+                <hr>
+                <div class="final-video-section">
+                  <p><span class="fw-bold text-warning">Link del Video Final (Google Drive):</span> <a href="#" id="driveVideo1-3" class="btn btn-outline-light" target="_blank">Ver Video</a></p>
+                  <p><span class="fw-bold text-warning">Comentarios/Correcciones:</span> <span id="comentariosVideo1-3" class="text-light">Sin comentarios</span></p>
+                  <p><span class="fw-bold text-warning">Estado Final:</span> <span id="estadoFinalVideo1-3" class="text-light">En Revisión</span></p>
+                  <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editDeliveryModal" data-video="1-3">Editar Entrega</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Video 4 -->
+          <div class="tab-pane fade fade-in" id="video4J4" role="tabpanel" aria-labelledby="video4J4-tab">
+            <div class="card text-center">
+              <div class="card-body">
+                <h5 class="card-title text-info">Video 4</h5>
+                <div class="recording-section">
+                  <p><span class="fw-bold text-warning">Fecha de Grabación:</span> <span id="fechaVideo1-4" class="text-light">--/--/----</span></p>
+                  <p><span class="fw-bold text-warning">Título:</span> <span id="tituloVideo1-4" class="text-light">Título del Video 4</span></p>
+                  <p><span class="fw-bold text-warning">Referencia:</span> <a href="#" id="linkReferenciaVideo1-4" class="text-light" target="_blank">Ver Link</a></p>
+                  <div>
+                    <img id="refFrameVideo1-4" src="" alt="Frame de Referencia" class="ref-frame" style="display:none;">
+                  </div>
+                  <p><span class="fw-bold text-warning">Comentarios:</span> <span id="comentariosRecordingVideo1-4" class="text-light">Sin comentarios</span></p>
+                  <p><span class="fw-bold text-warning">Estado de Jornada:</span> <span id="estadoVideo1-4" class="badge bg-danger">Por Realizar</span></p>
+                  <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editRecordingModal" data-video="1-4">Editar Grabación</button>
+                </div>
+                <hr>
+                <div class="final-video-section">
+                  <p><span class="fw-bold text-warning">Link del Video Final (Google Drive):</span> <a href="#" id="driveVideo1-4" class="btn btn-outline-light" target="_blank">Ver Video</a></p>
+                  <p><span class="fw-bold text-warning">Comentarios/Correcciones:</span> <span id="comentariosVideo1-4" class="text-light">Sin comentarios</span></p>
+                  <p><span class="fw-bold text-warning">Estado Final:</span> <span id="estadoFinalVideo1-4" class="text-light">En Revisión</span></p>
+                  <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editDeliveryModal" data-video="1-4">Editar Entrega</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Video 5 -->
+          <div class="tab-pane fade fade-in" id="video5J4" role="tabpanel" aria-labelledby="video5J4-tab">
+            <div class="card text-center">
+              <div class="card-body">
+                <h5 class="card-title text-info">Video 5</h5>
+                <div class="recording-section">
+                  <p><span class="fw-bold text-warning">Fecha de Grabación:</span> <span id="fechaVideo1-5" class="text-light">--/--/----</span></p>
+                  <p><span class="fw-bold text-warning">Título:</span> <span id="tituloVideo1-5" class="text-light">Título del Video 5</span></p>
+                  <p><span class="fw-bold text-warning">Referencia:</span> <a href="#" id="linkReferenciaVideo1-5" class="text-light" target="_blank">Ver Link</a></p>
+                  <div>
+                    <img id="refFrameVideo1-5" src="" alt="Frame de Referencia" class="ref-frame" style="display:none;">
+                  </div>
+                  <p><span class="fw-bold text-warning">Comentarios:</span> <span id="comentariosRecordingVideo1-5" class="text-light">Sin comentarios</span></p>
+                  <p><span class="fw-bold text-warning">Estado de Jornada:</span> <span id="estadoVideo1-5" class="badge bg-danger">Por Realizar</span></p>
+                  <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editRecordingModal" data-video="1-5">Editar Grabación</button>
+                </div>
+                <hr>
+                <div class="final-video-section">
+                  <p><span class="fw-bold text-warning">Link del Video Final (Google Drive):</span> <a href="#" id="driveVideo1-5" class="btn btn-outline-light" target="_blank">Ver Video</a></p>
+                  <p><span class="fw-bold text-warning">Comentarios/Correcciones:</span> <span id="comentariosVideo1-5" class="text-light">Sin comentarios</span></p>
+                  <p><span class="fw-bold text-warning">Estado Final:</span> <span id="estadoFinalVideo1-5" class="text-light">En Revisión</span></p>
+                  <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editDeliveryModal" data-video="1-5">Editar Entrega</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Video 6 -->
+          <div class="tab-pane fade fade-in" id="video6J4" role="tabpanel" aria-labelledby="video6J4-tab">
+            <div class="card text-center">
+              <div class="card-body">
+                <h5 class="card-title text-info">Video 6</h5>
+                <div class="recording-section">
+                  <p><span class="fw-bold text-warning">Fecha de Grabación:</span> <span id="fechaVideo1-6" class="text-light">--/--/----</span></p>
+                  <p><span class="fw-bold text-warning">Título:</span> <span id="tituloVideo1-6" class="text-light">Título del Video 6</span></p>
+                  <p><span class="fw-bold text-warning">Referencia:</span> <a href="#" id="linkReferenciaVideo1-6" class="text-light" target="_blank">Ver Link</a></p>
+                  <div>
+                    <img id="refFrameVideo1-6" src="" alt="Frame de Referencia" class="ref-frame" style="display:none;">
+                  </div>
+                  <p><span class="fw-bold text-warning">Comentarios:</span> <span id="comentariosRecordingVideo1-6" class="text-light">Sin comentarios</span></p>
+                  <p><span class="fw-bold text-warning">Estado de Jornada:</span> <span id="estadoVideo1-6" class="badge bg-danger">Por Realizar</span></p>
+                  <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editRecordingModal" data-video="1-6">Editar Grabación</button>
+                </div>
+                <hr>
+                <div class="final-video-section">
+                  <p><span class="fw-bold text-warning">Link del Video Final (Google Drive):</span> <a href="#" id="driveVideo1-6" class="btn btn-outline-light" target="_blank">Ver Video</a></p>
+                  <p><span class="fw-bold text-warning">Comentarios/Correcciones:</span> <span id="comentariosVideo1-6" class="text-light">Sin comentarios</span></p>
+                  <p><span class="fw-bold text-warning">Estado Final:</span> <span id="estadoFinalVideo1-6" class="text-light">En Revisión</span></p>
+                  <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editDeliveryModal" data-video="1-6">Editar Entrega</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Modal: Editar Información de Grabación -->
+  <div class="modal fade" id="editRecordingModal" tabindex="-1" aria-labelledby="editRecordingModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content fade-in">
+        <form id="editRecordingForm">
+          <div class="modal-header">
+            <h5 class="modal-title" id="editRecordingModalLabel">Editar Información de Grabación</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+          </div>
+          <div class="modal-body">
+            <!-- Identificador del video, formato "jornada-video" (ej: "1-1") -->
+            <input type="hidden" id="currentVideoRecording" value="">
+            <div class="mb-3">
+              <label for="fechaRecordingInput" class="form-label">Fecha de Grabación</label>
+              <input type="date" class="form-control" id="fechaRecordingInput" required>
+            </div>
+            <div class="mb-3">
+              <label for="tituloRecordingInput" class="form-label">Título del Video</label>
+              <input type="text" class="form-control" id="tituloRecordingInput" required>
+            </div>
+            <div class="mb-3">
+              <label for="refLinkInput" class="form-label">Link de Referencia</label>
+              <input type="url" class="form-control" id="refLinkInput" required>
+            </div>
+            <div class="mb-3 text-center">
+              <label class="form-label">Vista Previa del Frame</label>
+              <img id="refFramePreview" src="" alt="Vista Previa" class="ref-frame" style="max-width:300px; display:none;">
+            </div>
+            <!-- Nuevo: Comentarios de Grabación -->
+            <div class="mb-3">
+              <label for="comentariosRecordingInput" class="form-label">Comentarios</label>
+              <textarea class="form-control" id="comentariosRecordingInput" rows="3"></textarea>
+            </div>
+            <!-- Botón de estado (reemplaza el select) -->
+            <div class="mb-3 text-center">
+              <p><strong>Estado de Jornada:</strong></p>
+              <div class="btn-group" role="group" id="estadoRecordingGroup">
+                <input type="radio" class="btn-check" name="estadoRecording" id="estadoRecordingRealizado" value="realizado">
+                <label class="btn btn-outline-success" for="estadoRecordingRealizado">Realizado</label>
+                <input type="radio" class="btn-check" name="estadoRecording" id="estadoRecordingPorRealizar" value="porRealizar" checked>
+                <label class="btn btn-outline-danger" for="estadoRecordingPorRealizar">Por Realizar</label>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Modal: Editar Información de Entrega -->
+  <div class="modal fade" id="editDeliveryModal" tabindex="-1" aria-labelledby="editDeliveryModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content fade-in">
+        <form id="editDeliveryForm">
+          <div class="modal-header">
+            <h5 class="modal-title" id="editDeliveryModalLabel">Editar Información de Entrega</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+          </div>
+          <div class="modal-body">
+            <!-- Identificador del video -->
+            <input type="hidden" id="currentVideoDelivery" value="">
+            <div class="mb-3">
+              <label for="driveInput" class="form-label">Link del Video Final (Google Drive)</label>
+              <input type="url" class="form-control" id="driveInput" required>
+            </div>
+            <div class="mb-3">
+              <label for="comentariosDeliveryInput" class="form-label">Comentarios/Correcciones</label>
+              <textarea class="form-control" id="comentariosDeliveryInput" rows="3"></textarea>
+            </div>
+            <div class="mb-3 text-center">
+              <p><strong>Estado Final del Video:</strong></p>
+              <div class="btn-group" role="group" id="estadoFinalGroupModal">
+                <input type="radio" class="btn-check" name="estadoFinalDelivery" id="aprobadoDelivery" value="aprobado">
+                <label class="btn btn-outline-success" for="aprobadoDelivery">Aprobado</label>
+                <input type="radio" class="btn-check" name="estadoFinalDelivery" id="enRevisionDelivery" value="enRevision" checked>
+                <label class="btn btn-outline-warning" for="enRevisionDelivery">En Revisión</label>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Bootstrap Bundle con Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Actualizar automáticamente la vista previa del frame en el modal de Grabación
+    document.getElementById('refLinkInput').addEventListener('input', function() {
+      var url = this.value.trim();
+      var preview = document.getElementById('refFramePreview');
+      if (url) {
+        preview.src = url;
+        preview.style.display = 'block';
+      } else {
+        preview.style.display = 'none';
+      }
+    });
+    
+    // Modal de Grabación: al abrir, cargar datos actuales
+    var editRecordingModal = document.getElementById('editRecordingModal');
+    editRecordingModal.addEventListener('show.bs.modal', function(event) {
+      var button = event.relatedTarget;
+      var videoId = button.getAttribute('data-video'); // formato "jornada-video", ej: "1-1"
+      document.getElementById('currentVideoRecording').value = videoId;
+      
+      var fechaElem = document.getElementById("fechaVideo" + videoId);
+      document.getElementById('fechaRecordingInput').value = (fechaElem.innerText.trim() === '--/--/----') ? '' : fechaElem.innerText.trim();
+      document.getElementById('tituloRecordingInput').value = document.getElementById("tituloVideo" + videoId).innerText.trim();
+      var refLink = document.getElementById("linkReferenciaVideo" + videoId).getAttribute('href');
+      document.getElementById('refLinkInput').value = refLink;
+      var preview = document.getElementById('refFramePreview');
+      if (refLink) {
+        preview.src = refLink;
+        preview.style.display = 'block';
+      } else {
+        preview.style.display = 'none';
+      }
+      // Cargar comentarios de grabación (si existe)
+      var comElem = document.getElementById("comentariosRecordingVideo" + videoId);
+      document.getElementById('comentariosRecordingInput').value = comElem ? comElem.innerText.trim() : '';
+      
+      // Cargar estado mediante el grupo de botones
+      var estadoText = document.getElementById("estadoVideo" + videoId).innerText.trim().toLowerCase();
+      if (estadoText === 'realizado') {
+        document.getElementById('estadoRecordingRealizado').checked = true;
+      } else {
+        document.getElementById('estadoRecordingPorRealizar').checked = true;
+      }
+    });
+    
+    // Guardar cambios del modal de Grabación
+    document.getElementById('editRecordingForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      var videoId = document.getElementById('currentVideoRecording').value;
+      var nuevaFecha = document.getElementById('fechaRecordingInput').value || '--/--/----';
+      var nuevoTitulo = document.getElementById('tituloRecordingInput').value;
+      var nuevoRefLink = document.getElementById('refLinkInput').value;
+      var nuevoComentarios = document.getElementById('comentariosRecordingInput').value || 'Sin comentarios';
+      var nuevoEstado = document.querySelector('input[name="estadoRecording"]:checked').value;
+      
+      document.getElementById("fechaVideo" + videoId).innerText = nuevaFecha;
+      document.getElementById("tituloVideo" + videoId).innerText = nuevoTitulo;
+      document.getElementById("linkReferenciaVideo" + videoId).setAttribute('href', nuevoRefLink);
+      // Actualizar el badge del estado
+      if (nuevoEstado === 'realizado') {
+        document.getElementById("estadoVideo" + videoId).innerHTML = '<span class="badge bg-success">Realizado</span>';
+      } else {
+        document.getElementById("estadoVideo" + videoId).innerHTML = '<span class="badge bg-danger">Por Realizar</span>';
+      }
+      // Actualizar comentarios de grabación
+      document.getElementById("comentariosRecordingVideo" + videoId).innerText = nuevoComentarios;
+      
+      var refCardImg = document.getElementById("refFrameVideo" + videoId);
+      if (nuevoRefLink) {
+        refCardImg.src = nuevoRefLink;
+        refCardImg.style.display = 'block';
+      } else {
+        refCardImg.style.display = 'none';
+      }
+      
+      var modalInstance = bootstrap.Modal.getInstance(editRecordingModal);
+      modalInstance.hide();
+    });
+    
+    // Modal de Entrega: al abrir, cargar datos actuales
+    var editDeliveryModal = document.getElementById('editDeliveryModal');
+    editDeliveryModal.addEventListener('show.bs.modal', function(event) {
+      var button = event.relatedTarget;
+      var videoId = button.getAttribute('data-video');
+      document.getElementById('currentVideoDelivery').value = videoId;
+      
+      var driveLink = document.getElementById("driveVideo" + videoId).getAttribute('href');
+      document.getElementById('driveInput').value = driveLink;
+      var comentarios = document.getElementById("comentariosVideo" + videoId).innerText.trim();
+      document.getElementById('comentariosDeliveryInput').value = comentarios;
+      var estadoFinalText = document.getElementById("estadoFinalVideo" + videoId).innerText.trim().toLowerCase();
+      if (estadoFinalText === 'aprobado') {
+         document.getElementById('aprobadoDelivery').checked = true;
+      } else {
+         document.getElementById('enRevisionDelivery').checked = true;
+      }
+    });
+    
+    // Guardar cambios del modal de Entrega
+    document.getElementById('editDeliveryForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      var videoId = document.getElementById('currentVideoDelivery').value;
+      var nuevoDrive = document.getElementById('driveInput').value;
+      var nuevosComentarios = document.getElementById('comentariosDeliveryInput').value || 'Sin comentarios';
+      var nuevoEstadoFinal = document.querySelector('input[name="estadoFinalDelivery"]:checked').value;
+      
+      document.getElementById("driveVideo" + videoId).setAttribute('href', nuevoDrive);
+      document.getElementById("comentariosVideo" + videoId).innerText = nuevosComentarios;
+      document.getElementById("estadoFinalVideo" + videoId).innerText = (nuevoEstadoFinal === 'aprobado') ? 'Aprobado' : 'En Revisión';
+      
+      var modalInstance = bootstrap.Modal.getInstance(editDeliveryModal);
+      modalInstance.hide();
+    });
+  </script>
+</body>
+</html>
