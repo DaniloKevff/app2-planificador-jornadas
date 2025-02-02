@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>App2: Planificador de Jornadas</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body { background-color: #f8f9fa; }
+    h1 { text-align: center; }
+    .card { margin-bottom: 1rem; }
+  </style>
+</head>
+<body>
+  <div class="container my-4">
+    <h1 class="mb-4">App2: Planificador de Jornadas</h1>
+    
+    <!-- Pestañas para Jornadas -->
+    <ul class="nav nav-tabs" id="jornadaTabs" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="jornada1-tab" data-bs-toggle="tab" data-bs-target="#jornada1" type="button" role="tab" aria-controls="jornada1" aria-selected="true">
+          Jornada 1
+        </button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="jornada2-tab" data-bs-toggle="tab" data-bs-target="#jornada2" type="button" role="tab" aria-controls="jornada2" aria-selected="false">
+          Jornada 2
+        </button>
+      </li>
+      <!-- Puedes agregar más jornadas si lo requieres -->
+    </ul>
+    
+    <div class="tab-content" id="jornadaTabsContent">
+      <!-- Contenido para Jornada 1 -->
+      <div class="tab-pane fade show active" id="jornada1" role="tabpanel" aria-labelledby="jornada1-tab">
+        <!-- Pestañas internas para 6 videos de la Jornada 1 -->
+        <ul class="nav nav-tabs mt-3" id="videoTabsJ1" role="tablist">
+          <!-- Se crean 6 pestañas para cada video -->
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="video1-tab" data-bs-toggle="tab" data-bs-target="#video1" type="button" role="tab" aria-controls="video1" aria-selected="true">
+              Video 1
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="video2-tab" data-bs-toggle="tab" data-bs-target="#video2" type="button" role="tab" aria-controls="video2" aria-selected="false">
+              Video 2
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="video3-tab" data-bs-toggle="tab" data-bs-target="#video3" type="button" role="tab" aria-controls="video3" aria-selected="false">
+              Video 3
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="video4-tab" data-bs-toggle="tab" data-bs-target="#video4" type="button" role="tab" aria-controls="video4" aria-selected="false">
+              Video 4
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="video5-tab" data-bs-toggle="tab" data-bs-target="#video5" type="button" role="tab" aria-controls="video5" aria-selected="false">
+              Video 5
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="video6-tab" data-bs-toggle="tab" data-bs-target="#video6" type="button" role="tab" aria-controls="video6" aria-selected="false">
+              Video 6
+            </button>
+          </li>
+        </ul>
+        
+        <div class="tab-content mt-3" id="videoTabsContentJ1">
+          <!-- Cada video se muestra en una tarjeta con sus campos -->
+          <!-- Video 1 -->
+          <div class="tab-pane fade show active" id="video1" role="tabpanel" aria-labelledby="video1-tab">
+            <div class="card">
+              <div class="card-body">
+                <p><strong>Fecha de Grabación:</strong> <span id="fechaVideo1">--/--/----</span></p>
+                <p><strong>Título:</strong> <span id="tituloVideo1">Título del Video 1</span></p>
+                <p><strong>Referencia:</strong> <a href="#" id="linkReferenciaVideo1" target="_blank">Ver Link</a></p>
+                <p><strong>Estado de Jornada:</strong> <span id="estadoVideo1">Por Realizar</span></p>
+                <p><strong>Link del Video Final (Google Drive):</strong> <a href="#" id="driveVideo1" target="_blank">Ver Video</a></p>
+                <p><strong>Comentarios/Correcciones:</strong> <span id="comentariosVideo1">Sin comentarios</span></p>
+                <p><strong>Estado Final:</strong> <span id="estadoFinalVideo1">En Revisión</span></p>
+                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editModal" data-video="1">
+                  Editar
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- Video 2 -->
+          <div class="tab-pane fade" id="video2" role="tabpanel" aria-labelledby="video2-tab">
+            <div class="card">
+              <div class="card-body">
+                <p><strong>Fecha de Grabación:</strong> <span id="fechaVideo2">--/--/----</span></p>
+                <p><strong>Título:</strong> <span id="tituloVideo2">Título del Video 2</span></p>
+                <p><strong>Referencia:</strong> <a href="#" id="linkReferenciaVideo2" target="_blank">Ver Link</a></p>
+                <p><strong>Estado de Jornada:</strong> <span id="estadoVideo2">Por Realizar</span></p>
+                <p><strong>Link del Video Final (Google Drive):</strong> <a href="#" id="driveVideo2" target="_blank">Ver Video</a></p>
+                <p><strong>Comentarios/Correcciones:</strong> <span id="comentariosVideo2">Sin comentarios</span></p>
+                <p><strong>Estado Final:</strong> <span id="estadoFinalVideo2">En Revisión</span></p>
+                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editModal" data-video="2">
+                  Editar
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- Video 3 -->
+          <div class="tab-pane fade" id="video3" role="tabpanel" aria-labelledby="video3-tab">
+            <div class="card">
+              <div class="card-body">
+                <p><strong>Fecha de Grabación:</strong> <span id="fechaVideo3">--/--/----</span></p>
+                <p><strong>Título:</strong> <span id="tituloVideo3">Título del Video 3</span></p>
+                <p><strong>Referencia:</strong> <a href="#" id="linkReferenciaVideo3" target="_blank">Ver Link</a></p>
+                <p><strong>Estado de Jornada:</strong> <span id="estadoVideo3">Por Realizar</span></p>
+                <p><strong>Link del Video Final (Google Drive):</strong> <a href="#" id="driveVideo3" target="_blank">Ver Video</a></p>
+                <p><strong>Comentarios/Correcciones:</strong> <span id="comentariosVideo3">Sin comentarios</span></p>
+                <p><strong>Estado Final:</strong> <span id="estadoFinalVideo3">En Revisión</span></p>
+                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editModal" data-video="3">
+                  Editar
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- Video 4 -->
+          <div class="tab-pane fade" id="video4" role="tabpanel" aria-labelledby="video4-tab">
+            <div class="card">
+              <div class="card-body">
+                <p><strong>Fecha de Grabación:</strong> <span id="fechaVideo4">--/--/----</span></p>
+                <p><strong>Título:</strong> <span id="tituloVideo4">Título del Video 4</span></p>
+                <p><strong>Referencia:</strong> <a href="#" id="linkReferenciaVideo4" target="_blank">Ver Link</a></p>
+                <p><strong>Estado de Jornada:</strong> <span id="estadoVideo4">Por Realizar</span></p>
+                <p><strong>Link del Video Final (Google Drive):</strong> <a href="#" id="driveVideo4" target="_blank">Ver Video</a></p>
+                <p><strong>Comentarios/Correcciones:</strong> <span id="comentariosVideo4">Sin comentarios</span></p>
+                <p><strong>Estado Final:</strong> <span id="estadoFinalVideo4">En Revisión</span></p>
+                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editModal" data-video="4">
+                  Editar
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- Video 5 -->
+          <div class="tab-pane fade" id="video5" role="tabpanel" aria-labelledby="video5-tab">
+            <div class="card">
+              <div class="card-body">
+                <p><strong>Fecha de Grabación:</strong> <span id="fechaVideo5">--/--/----</span></p>
+                <p><strong>Título:</strong> <span id="tituloVideo5">Título del Video 5</span></p>
+                <p><strong>Referencia:</strong> <a href="#" id="linkReferenciaVideo5" target="_blank">Ver Link</a></p>
+                <p><strong>Estado de Jornada:</strong> <span id="estadoVideo5">Por Realizar</span></p>
+                <p><strong>Link del Video Final (Google Drive):</strong> <a href="#" id="driveVideo5" target="_blank">Ver Video</a></p>
+                <p><strong>Comentarios/Correcciones:</strong> <span id="comentariosVideo5">Sin comentarios</span></p>
+                <p><strong>Estado Final:</strong> <span id="estadoFinalVideo5">En Revisión</span></p>
+                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editModal" data-video="5">
+                  Editar
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- Video 6 -->
+          <div class="tab-pane fade" id="video6" role="tabpanel" aria-labelledby="video6-tab">
+            <div class="card">
+              <div class="card-body">
+                <p><strong>Fecha de Grabación:</strong> <span id="fechaVideo6">--/--/----</span></p>
+                <p><strong>Título:</strong> <span id="tituloVideo6">Título del Video 6</span></p>
+                <p><strong>Referencia:</strong> <a href="#" id="linkReferenciaVideo6" target="_blank">Ver Link</a></p>
+                <p><strong>Estado de Jornada:</strong> <span id="estadoVideo6">Por Realizar</span></p>
+                <p><strong>Link del Video Final (Google Drive):</strong> <a href="#" id="driveVideo6" target="_blank">Ver Video</a></p>
+                <p><strong>Comentarios/Correcciones:</strong> <span id="comentariosVideo6">Sin comentarios</span></p>
+                <p><strong>Estado Final:</strong> <span id="estadoFinalVideo6">En Revisión</span></p>
+                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editModal" data-video="6">
+                  Editar
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Contenido para Jornada 2 (puedes replicar la misma estructura o personalizarlo) -->
+      <div class="tab-pane fade" id="jornada2" role="tabpanel" aria-labelledby="jornada2-tab">
+        <p class="mt-3">Contenido de la Jornada 2</p>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Modal Único Reutilizable para Editar Cualquier Video -->
+  <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <form id="editForm">
+          <div class="modal-header">
+            <h5 class="modal-title" id="editModalLabel">Editar Video</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+          </div>
+          <div class="modal-body">
+            <!-- Campo oculto para identificar el video -->
+            <input type="hidden" id="currentVideo" value="">
+            <div class="mb-3">
+              <label for="fechaInput" class="form-label">Fecha de Grabación</label>
+              <input type="date" class="form-control" id="fechaInput" required>
+            </div>
+            <div class="mb-3">
+              <label for="tituloInput" class="form-label">Título del Video</label>
+              <input type="text" class="form-control" id="tituloInput" required>
+            </div>
+            <div class="mb-3">
+              <label for="linkInput" class="form-label">Link de Referencia</label>
+              <input type="url" class="form-control" id="linkInput" required>
+            </div>
+            <div class="mb-3">
+              <label for="estadoSelect" class="form-label">Estado de Jornada</label>
+              <select class="form-select" id="estadoSelect">
+                <option value="porRealizar">Por Realizar</option>
+                <option value="realizado">Realizado</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="driveInput" class="form-label">Link del Video Final (Google Drive)</label>
+              <input type="url" class="form-control" id="driveInput" required>
+            </div>
+            <div class="mb-3">
+              <label for="comentariosInput" class="form-label">Comentarios/Correcciones</label>
+              <textarea class="form-control" id="comentariosInput" rows="3"></textarea>
+            </div>
+            <div class="mb-3">
+              <label for="estadoFinalSelect" class="form-label">Estado Final del Video</label>
+              <select class="form-select" id="estadoFinalSelect">
+                <option value="enRevision">En Revisión</option>
+                <option value="aprobado">Aprobado</option>
+              </select>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Bootstrap Bundle con Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Al abrir el modal, cargar los datos actuales del video seleccionado
+    var editModal = document.getElementById('editModal');
+    editModal.addEventListener('show.bs.modal', function (event) {
+      var button = event.relatedTarget;
+      var videoId = button.getAttribute('data-video');
+      document.getElementById('currentVideo').value = videoId;
+      
+      // Cargar los valores actuales de la tarjeta
+      document.getElementById('fechaInput').value = document.getElementById('fechaVideo' + videoId).innerText.trim() === '--/--/----' ? '' : document.getElementById('fechaVideo' + videoId).innerText.trim();
+      document.getElementById('tituloInput').value = document.getElementById('tituloVideo' + videoId).innerText.trim();
+      document.getElementById('linkInput').value = document.getElementById('linkReferenciaVideo' + videoId).getAttribute('href');
+      
+      var estadoActual = document.getElementById('estadoVideo' + videoId).innerText.trim().toLowerCase();
+      document.getElementById('estadoSelect').value = (estadoActual === 'realizado') ? 'realizado' : 'porRealizar';
+      
+      document.getElementById('driveInput').value = document.getElementById('driveVideo' + videoId).getAttribute('href');
+      document.getElementById('comentariosInput').value = document.getElementById('comentariosVideo' + videoId).innerText.trim();
+      
+      var estadoFinalActual = document.getElementById('estadoFinalVideo' + videoId).innerText.trim().toLowerCase();
+      document.getElementById('estadoFinalSelect').value = (estadoFinalActual === 'aprobado') ? 'aprobado' : 'enRevision';
+    });
+    
+    // Manejo del envío del formulario del modal
+    document.getElementById('editForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      var videoId = document.getElementById('currentVideo').value;
+      
+      // Recoger nuevos valores
+      var nuevaFecha = document.getElementById('fechaInput').value || '--/--/----';
+      var nuevoTitulo = document.getElementById('tituloInput').value;
+      var nuevoLink = document.getElementById('linkInput').value;
+      var nuevoEstado = document.getElementById('estadoSelect').value;
+      var nuevoDrive = document.getElementById('driveInput').value;
+      var nuevosComentarios = document.getElementById('comentariosInput').value || 'Sin comentarios';
+      var nuevoEstadoFinal = document.getElementById('estadoFinalSelect').value;
+      
+      // Actualizar la tarjeta correspondiente
+      document.getElementById('fechaVideo' + videoId).innerText = nuevaFecha;
+      document.getElementById('tituloVideo' + videoId).innerText = nuevoTitulo;
+      document.getElementById('linkReferenciaVideo' + videoId).setAttribute('href', nuevoLink);
+      // Actualizar el texto según la opción seleccionada
+      document.getElementById('estadoVideo' + videoId).innerText = (nuevoEstado === 'realizado') ? 'Realizado' : 'Por Realizar';
+      document.getElementById('driveVideo' + videoId).setAttribute('href', nuevoDrive);
+      document.getElementById('comentariosVideo' + videoId).innerText = nuevosComentarios;
+      document.getElementById('estadoFinalVideo' + videoId).innerText = (nuevoEstadoFinal === 'aprobado') ? 'Aprobado' : 'En Revisión';
+      
+      // Cerrar el modal
+      var modalInstance = bootstrap.Modal.getInstance(editModal);
+      modalInstance.hide();
+    });
+  </script>
+</body>
+</html>
