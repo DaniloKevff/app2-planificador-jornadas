@@ -87,6 +87,51 @@
       to { opacity: 1; }
     }
   </style>
+<!-- Firebase SDK -->
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+  import { getFirestore, collection, getDocs, addDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+  const firebaseConfig = {
+  apiKey: "AIzaSyDZo2EaK2Zax5u3VK3an0IC_hu0mlb_J3Y",
+  authDomain: "filmakerapp-2985b.firebaseapp.com",
+  projectId: "filmakerapp-2985b",
+  storageBucket: "filmakerapp-2985b.firebasestorage.app",
+  messagingSenderId: "788470717888",
+  appId: "1:788470717888:web:a4ea9d467f196c8b417c25",
+  measurementId: "G-1XQ5X56SZS"
+};
+
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
+</script>
+<script type="module">
+  async function guardarVideo(videoId, titulo, fecha, referencia, comentarios) {
+    await addDoc(collection(db, "videos"), {
+      videoId,
+      titulo,
+      fecha,
+      referencia,
+      comentarios
+    });
+    alert("Datos guardados en Firebase");
+  }
+
+  document.querySelectorAll(".btn-primary").forEach(button => {
+    button.addEventListener("click", () => {
+      const videoId = button.getAttribute("data-video");
+      const titulo = document.getElementById(`tituloVideo${videoId}`).innerText;
+      const fecha = document.getElementById(`fechaVideo${videoId}`).innerText;
+      const referencia = document.getElementById(`linkReferenciaVideo${videoId}`).href;
+      const comentarios = document.getElementById(`comentariosRecordingVideo${videoId}`).innerText;
+
+      guardarVideo(videoId, titulo, fecha, referencia, comentarios);
+    });
+  });
+</script>
+
+
+
 </head>
 <body>
   <div class="container my-4">
