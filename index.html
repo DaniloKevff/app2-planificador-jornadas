@@ -89,33 +89,41 @@
   </style>
 <!-- Firebase SDK -->
 <script type="module">
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-  import { getFirestore, collection, getDocs, addDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+  import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+  const db = getFirestore(app);
+
 
   const firebaseConfig = {
-  apiKey: "AIzaSyDZo2EaK2Zax5u3VK3an0IC_hu0mlb_J3Y",
-  authDomain: "filmakerapp-2985b.firebaseapp.com",
-  projectId: "filmakerapp-2985b",
-  storageBucket: "filmakerapp-2985b.firebasestorage.app",
-  messagingSenderId: "788470717888",
-  appId: "1:788470717888:web:a4ea9d467f196c8b417c25",
-  measurementId: "G-1XQ5X56SZS"
+   apiKey: "AIzaSyA3AVgwWezqI2UbtaODRoZWSoM8soxOPXk",
+  authDomain: "kedsac-grabacion.firebaseapp.com",
+  projectId: "kedsac-grabacion",
+  storageBucket: "kedsac-grabacion.firebasestorage.app",
+  messagingSenderId: "155985901998",
+  appId: "1:155985901998:web:bf48e30e6a91ddaf1f303f",
+  measurementId: "G-RMMXHLFBHF"
 };
 
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 </script>
 <script type="module">
-  async function guardarVideo(videoId, titulo, fecha, referencia, comentarios) {
-    await addDoc(collection(db, "videos"), {
-      videoId,
-      titulo,
-      fecha,
-      referencia,
-      comentarios
-    });
-    alert("Datos guardados en Firebase");
-  }
+async function guardarVideo(videoId, titulo, fecha, referencia, comentarios) {
+    try {
+        await addDoc(collection(db, "videos"), {
+            videoId,
+            titulo,
+            fecha,
+            referencia,
+            comentarios
+        });
+        alert("Datos guardados en Firebase correctamente ✅");
+    } catch (error) {
+        console.error("Error guardando datos: ", error);
+        alert("❌ Error al guardar los datos");
+    }
+}
+
 
   document.querySelectorAll(".btn-primary").forEach(button => {
     button.addEventListener("click", () => {
