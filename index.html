@@ -6,43 +6,53 @@
   <title>Kedsac - Tim Hortons - FEB2025</title>
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script defer src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js"></script>
+  <script defer src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js"></script>
+  <script defer src="https://www.gstatic.com/firebasejs/10.7.1/firebase-storage.js"></script>
   <style>
     /* Tema oscuro moderno con toques azules y resaltos */
     body {
       background-color: #121212;
       color: #a6c8ff;
+      font-family: 'Inter', sans-serif;
     }
     h1 {
       text-align: center;
-      margin-bottom: 1rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      color: #58a6ff;
     }
     .container {
       max-width: 1200px;
     }
     .card {
-      background-color: #1e1e1e;
-      border: none;
-      color: #a6c8ff;
-      margin-bottom: 1rem;
-      transition: transform 0.3s ease, opacity 0.3s ease;
+      background-color: #161b22;
+      border-radius: 12px;
+      color: #ffffff;
+      box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+      padding: 1rem;
     }
     .card:hover {
-      transform: scale(1.02);
+      transform: scale(1.03);
+      box-shadow: 0px 6px 15px rgba(255, 255, 255, 0.2);
     }
     a {
       color: #8ab4f8;
     }
     /* Pestañas */
     .nav-tabs .nav-link {
-      background-color: #1e1e1e;
-      color: #a6c8ff;
-      border: none;
+      background-color: #21262d;
+      color: #c9d1d9;
+      border-radius: 8px;
       margin-right: 0.2rem;
-      transition: background-color 0.3s;
+      margin: 0 5px;
+      transition: all 0.3s ease;
     }
     .nav-tabs .nav-link.active {
-      background-color: #2a2a2a;
-      color: #a6c8ff;
+      background-color: #58a6ff;
+      color: white;
+      font-weight: bold;
     }
     .modal-content {
       background-color: #1e1e1e;
@@ -54,8 +64,15 @@
       border: 1px solid #444;
     }
     .btn-primary {
-      background-color: #3a81f1;
-      border: none;
+      background: linear-gradient(45deg, #238636, #176b42);
+      border-radius: 8px;
+      padding: 10px 16px;
+      font-weight: bold;
+      transition: all 0.3s ease-in-out;
+    }
+    .btn-primary:hover {
+     background: linear-gradient(45deg, #1e5af1, #3a81f1);
+     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
     }
     /* Resaltar etiquetas y datos */
     .fw-bold.text-warning {
@@ -88,27 +105,39 @@
     }
   </style>
 <!-- Firebase SDK -->
-<script type="module">
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-  import { getFirestore, collection, getDocs, addDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
-  const db = getFirestore(app);
-
-
+<script>
+document.addEventListener("DOMContentLoaded", function() {
   const firebaseConfig = {
-   apiKey: "AIzaSyA3AVgwWezqI2UbtaODRoZWSoM8soxOPXk",
-  authDomain: "kedsac-grabacion.firebaseapp.com",
-  projectId: "kedsac-grabacion",
-  storageBucket: "kedsac-grabacion.firebasestorage.app",
-  messagingSenderId: "155985901998",
-  appId: "1:155985901998:web:bf48e30e6a91ddaf1f303f",
-  measurementId: "G-RMMXHLFBHF"
-};
-
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+    apiKey: "AIzaSyA3AVgwWezqI2UbtaODRoZWSoM8soxOPXk",
+        authDomain: "kedsac-grabacion.firebaseapp.com",
+        projectId: "kedsac-grabacion",
+        storageBucket: "kedsac-grabacion.appspot.com",
+        messagingSenderId: "155985901998",
+        appId: "1:155985901998:web:bf48e30e6a91ddaf1f303f",
+        measurementId: "G-RMMXHLFBHF"};
+      const app = firebase.initializeApp(firebaseConfig);
+      const db = firebase.firestore();
+      const storage = firebase.storage();
+    });
 </script>
+
 <script type="module">
-async function guardarVideo(videoId, titulo, fecha, referencia, comentarios) {
+async function guardarVideo(videoId) {
+    const tituloElem = document.getElementById(`tituloVideo${videoId}`);
+    const fechaElem = document.getElementById(`fechaVideo${videoId}`);
+    const referenciaElem = document.getElementById(`linkReferenciaVideo${videoId}`);
+    const comentariosElem = document.getElementById(`comentariosRecordingVideo${videoId}`);
+
+    if (!tituloElem || !fechaElem || !referenciaElem) {
+        alert("Error: Datos no encontrados. Verifica los IDs en el HTML.");
+        return;
+    }
+
+    const titulo = tituloElem.innerText;
+    const fecha = fechaElem.innerText;
+    const referencia = referenciaElem.href;
+    const comentarios = comentariosElem.innerText;
+
     try {
         await addDoc(collection(db, "videos"), {
             videoId,
@@ -117,25 +146,93 @@ async function guardarVideo(videoId, titulo, fecha, referencia, comentarios) {
             referencia,
             comentarios
         });
-        alert("Datos guardados en Firebase correctamente ✅");
-    } catch (error) {
-        console.error("Error guardando datos: ", error);
-        alert("❌ Error al guardar los datos");
+
+        Swal.fire({
+            icon: "success",
+            title: "¡Guardado!",
+            text: "El video se guardó correctamente en Firestore."
+        });
+  
     }
 }
 
-
-  document.querySelectorAll(".btn-primary").forEach(button => {
+// Asignar evento a los botones
+document.querySelectorAll(".btn-primary").forEach(button => {
     button.addEventListener("click", () => {
-      const videoId = button.getAttribute("data-video");
-      const titulo = document.getElementById(`tituloVideo${videoId}`).innerText;
-      const fecha = document.getElementById(`fechaVideo${videoId}`).innerText;
-      const referencia = document.getElementById(`linkReferenciaVideo${videoId}`).href;
-      const comentarios = document.getElementById(`comentariosRecordingVideo${videoId}`).innerText;
-
-      guardarVideo(videoId, titulo, fecha, referencia, comentarios);
+        const videoId = button.getAttribute("data-video");
+        guardarVideo(videoId);
     });
-  });
+});
+
+import { doc, setDoc, getDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+// Función para guardar el título en Firestore
+async function guardarTitulo() {
+  const nuevoTitulo = document.getElementById("newTitle").value;
+  const logoFile = document.getElementById("logoUpload").files[0];
+
+  if (nuevoTitulo.trim() === "") {
+    Swal.fire({
+      icon: "error",
+      title: "Error",
+      text: "El título no puede estar vacío."
+    });
+    return;
+  }
+
+  let logoURL = "";
+  if (logoFile) {
+    const logoRef = ref(storage, `logos/${logoFile.name}`);
+    await uploadBytes(logoRef, logoFile);
+    logoURL = await getDownloadURL(logoRef);
+  }
+
+  try {
+    await setDoc(doc(db, "config", "titulo"), {
+      titulo: nuevoTitulo,
+      logo: logoURL
+    });
+
+    Swal.fire({
+      icon: "success",
+      title: "Título actualizado",
+      text: "El título y el logo se han guardado correctamente."
+    });
+
+    document.getElementById("pageTitle").innerText = nuevoTitulo;
+    if (logoURL) document.getElementById("logoImg").src = logoURL;
+  } catch (error) {
+    console.error("Error al guardar título:", error);
+    Swal.fire({
+      icon: "error",
+      title: "Error",
+      text: "Hubo un problema al guardar los cambios."
+    });
+  }
+}
+
+//Funcion guardar datos en firestone
+import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+const db = getFirestore();
+
+
+// Cargar título desde Firestore al iniciar la app
+async function cargarTitulo() {
+  const docRef = doc(db, "config", "titulo");
+  const docSnap = await getDoc(docRef);
+
+  if (docSnap.exists()) {
+    const data = docSnap.data();
+    document.getElementById("pageTitle").innerText = data.titulo;
+    if (data.logo) {
+      document.getElementById("logoImg").src = data.logo;
+    }
+  }
+}
+
+window.onload = cargarTitulo;
+
 </script>
 
 
@@ -143,7 +240,14 @@ async function guardarVideo(videoId, titulo, fecha, referencia, comentarios) {
 </head>
 <body>
   <div class="container my-4">
-    <h1>Kedsac - Tim Hortons - FEB2025</h1>
+    <div class="d-flex justify-content-center align-items-center mt-4">
+      <img id="logoImg" src="default-logo.png" alt="Logo" class="logo me-3" style="height: 50px; cursor: pointer;">
+      <h1 id="pageTitle" style="cursor: pointer;">Kedsac - Tim Hortons - FEB2025</h1>
+      <button class="btn btn-sm btn-outline-light ms-3" data-bs-toggle="modal" data-bs-target="#editTitleModal">
+        <i class="bi bi-pencil"></i> Editar
+      </button>
+    </div>
+    
     
     <!-- Pestañas principales: 4 Jornadas -->
     <ul class="nav nav-tabs justify-content-center" id="jornadaTabs" role="tablist">
@@ -207,7 +311,6 @@ async function guardarVideo(videoId, titulo, fecha, referencia, comentarios) {
               </div>
             </div>
           </div>
-          <!-- Se replican las tarjetas Video 2 a Video 6 para Jornada 1 -->
           <!-- Video 2 -->
           <div class="tab-pane fade fade-in" id="video2J1" role="tabpanel" aria-labelledby="video2J1-tab">
             <div class="card text-center">
@@ -352,7 +455,6 @@ async function guardarVideo(videoId, titulo, fecha, referencia, comentarios) {
           <li class="nav-item" role="presentation"><button class="nav-link" id="video6J2-tab" data-bs-toggle="tab" data-bs-target="#video6J2" type="button" role="tab" aria-controls="video6J2" aria-selected="false">Video 6</button></li>
         </ul>
         <div class="tab-content mt-3" id="videoTabsContentJ2">
-          <!-- Se replican las 6 tarjetas para Jornada 2 (aquí se muestra Video 1) -->
           <div class="tab-pane fade show active fade-in" id="video1J2" role="tabpanel" aria-labelledby="video1J2-tab">
             <div class="card text-center">
               <div class="card-body">
@@ -378,7 +480,6 @@ async function guardarVideo(videoId, titulo, fecha, referencia, comentarios) {
               </div>
             </div>
           </div>
-          <!-- Se replican Videos 2 a 6 para Jornada 2 -->
                      <!-- Video 2 -->
           <div class="tab-pane fade fade-in" id="video2J2" role="tabpanel" aria-labelledby="video2J2-tab">
             <div class="card text-center">
@@ -509,7 +610,6 @@ async function guardarVideo(videoId, titulo, fecha, referencia, comentarios) {
               </div>
             </div>
           </div>
-          <!-- (Para brevedad se pueden copiar bloques similares cambiando los IDs: "2-2", "2-3", "2-4", "2-5", "2-6") -->
         </div>
       </div>
       
@@ -550,7 +650,7 @@ async function guardarVideo(videoId, titulo, fecha, referencia, comentarios) {
               </div>
             </div>
           </div>
-          <!-- Replicar Videos 2 a 6 para Jornada 3 -->
+
           <div class="tab-pane fade fade-in" id="video2J3" role="tabpanel" aria-labelledby="video2J3-tab">
             <div class="card text-center">
               <div class="card-body">
@@ -720,7 +820,6 @@ async function guardarVideo(videoId, titulo, fecha, referencia, comentarios) {
               </div>
             </div>
           </div>
-          <!-- Replicar Videos 2 a 6 para Jornada 4 -->
           <div class="tab-pane fade fade-in" id="video2J4" role="tabpanel" aria-labelledby="video2J4-tab">
             <div class="card text-center">
               <div class="card-body">
@@ -1063,5 +1162,27 @@ async function guardarVideo(videoId, titulo, fecha, referencia, comentarios) {
       modalInstance.hide();
     });
   </script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 </body>
+<!-- Modal para editar título -->
+<div class="modal fade" id="editTitleModal" tabindex="-1" aria-labelledby="editTitleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="editTitleModalLabel">Editar Título</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <input type="text" id="newTitle" class="form-control" placeholder="Nuevo título">
+        <input type="file" id="logoUpload" class="form-control mt-2">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-primary" onclick="guardarTitulo()">Guardar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 </html>
